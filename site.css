@@ -212,6 +212,7 @@ img {
   font-size: .78rem;
   font-weight: 500;
   letter-spacing: .035em;
+  text-transform: uppercase;
   transition: background .2s ease, color .2s ease;
 }
 
@@ -259,6 +260,7 @@ img {
   border: 1px solid rgba(24, 0, 72, .24);
   background: transparent;
   color: var(--purple);
+  text-transform: uppercase;
   box-shadow: none;
 }
 
