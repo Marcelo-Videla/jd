@@ -1803,6 +1803,112 @@ body.modal-open {
   background: #fff;
 }
 
+.client-logos {
+  padding: 20px 0 24px;
+  background:
+    linear-gradient(180deg, rgba(24, 0, 72, .98), rgba(16, 12, 34, .98)),
+    radial-gradient(circle at top center, rgba(216, 182, 92, .16), transparent 42%);
+  color: #fff;
+}
+
+.client-logos .wrap {
+  width: min(100% - 12px, calc(var(--container) + 240px));
+}
+
+.client-logos-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.client-logos-head p {
+  margin: 0;
+  color: rgba(255, 255, 255, .78);
+  font-size: .86rem;
+  letter-spacing: .02em;
+}
+
+.client-marquee {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  padding: 14px 0;
+}
+
+.client-marquee::before,
+.client-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 110px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.client-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(24, 0, 72, 1), rgba(24, 0, 72, 0));
+}
+
+.client-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(24, 0, 72, 1), rgba(24, 0, 72, 0));
+}
+
+.client-marquee-trackset {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  animation: clientMarquee 44s linear infinite;
+  will-change: transform;
+}
+
+.client-marquee:hover .client-marquee-trackset {
+  animation-play-state: paused;
+}
+
+.client-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+  padding-right: 52px;
+}
+
+.client-marquee-track img {
+  display: block;
+  width: auto;
+  height: 47px;
+  max-width: 162px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: .92;
+  flex: 0 0 auto;
+}
+
+@keyframes clientMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-marquee-track {
+    animation: none;
+  }
+
+  .client-marquee-trackset {
+    animation: none;
+  }
+}
+
 .home-copy {
   max-width: 620px;
   margin-bottom: 30px;
@@ -2530,6 +2636,43 @@ body.modal-open {
   .home-offer,
   .home-testimonials {
     padding: 58px 0;
+  }
+
+  .client-logos {
+    padding: 16px 0 18px;
+  }
+
+  .client-logos .wrap {
+    width: min(100% - 12px, var(--container));
+  }
+
+  .client-logos-head {
+    margin-bottom: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .client-marquee {
+    padding: 12px 0;
+  }
+
+  .client-marquee::before,
+  .client-marquee::after {
+    width: 56px;
+  }
+
+  .client-marquee-track {
+    gap: 30px;
+    padding-right: 30px;
+  }
+
+  .client-marquee-trackset {
+    animation-duration: 36s;
+  }
+
+  .client-marquee-track img {
+    height: 34px;
+    max-width: 114px;
   }
 
   .home-copy {
