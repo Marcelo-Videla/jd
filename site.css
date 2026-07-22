@@ -1954,9 +1954,26 @@ body.modal-open {
   background:
     linear-gradient(90deg, rgba(58, 22, 130, .86), rgba(24, 0, 72, .58), rgba(24, 0, 72, .18)),
     url("fotos web/home-nuestra-historia.png") center/cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.home-story::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 25%, rgba(255, 255, 255, .08), transparent 34%),
+    radial-gradient(circle at 82% 72%, rgba(216, 182, 92, .1), transparent 28%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .story-panel {
+  position: relative;
+  z-index: 1;
   max-width: 590px;
   padding: 38px 42px;
   background: rgba(58, 22, 130, .72);
@@ -2345,6 +2362,10 @@ body.modal-open {
 
   .quote-btn {
     display: none;
+  }
+
+  .home-story {
+    background-attachment: scroll;
   }
 
   .contact-map iframe {
