@@ -340,6 +340,26 @@ img {
   z-index: 1;
 }
 
+.hero-slide.is-active .hero-content > * {
+  animation: heroFadeUp .85s ease both;
+}
+
+.hero-slide.is-active .hero-content .badge {
+  animation-delay: .1s;
+}
+
+.hero-slide.is-active .hero-content h1 {
+  animation-delay: .22s;
+}
+
+.hero-slide.is-active .hero-content p {
+  animation-delay: .34s;
+}
+
+.hero-slide.is-active .hero-content .actions {
+  animation-delay: .46s;
+}
+
 .hero-slide.hero-slide-overlay .wrap {
   position: relative;
   z-index: 1;
@@ -406,6 +426,26 @@ img {
   max-width: 520px;
   padding-left: 56px;
   color: #fff;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide.is-active .hero-content > * {
+    animation: none;
+  }
 }
 
 .badge,
