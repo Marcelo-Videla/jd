@@ -789,6 +789,40 @@ h1 {
   gap: 22px;
 }
 
+.project-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.project-photo-card {
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+}
+
+.project-photo-card img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1.08;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.project-photo-card:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;
+}
+
 .project-year-card {
   overflow: hidden;
   border: 1px solid rgba(180, 201, 205, .95);
@@ -890,6 +924,7 @@ h1 {
 }
 
 .project-year-cover:focus-visible,
+.project-photo-card:focus-visible,
 .project-filter:focus-visible,
 .gallery-close:focus-visible,
 .gallery-nav:focus-visible,
@@ -1067,6 +1102,33 @@ body.modal-open {
 .gallery-thumb:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
+}
+
+.home-page .home-story,
+.home-page .home-testimonials,
+.services-testimonials,
+.projects-page .project-year-filters,
+.projects-page .project-year-grid,
+.projects-page .section.soft,
+.home-page .media-panel.about {
+  display: none;
+}
+
+.video-panel {
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #0f0c1c;
+  box-shadow: var(--shadow);
+}
+
+.video-panel-media,
+.somos-about-visual video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
 }
 
 .gallery-thumb.active {
@@ -1486,6 +1548,10 @@ body.modal-open {
   width: 100%;
   min-height: 500px;
   object-fit: cover;
+}
+
+.somos-about-visual video {
+  min-height: 500px;
 }
 
 .somos-about-copy .section-head {
@@ -2420,6 +2486,10 @@ body.modal-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .project-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .somos-about-layout,
   .enfoque-grid,
   .team-highlight {
@@ -2427,6 +2497,9 @@ body.modal-open {
   }
 
   .somos-about-visual img,
+  .somos-about-visual video,
+  .video-panel,
+  .video-panel-media,
   .team-highlight figure {
     min-height: 420px;
   }
@@ -2519,6 +2592,10 @@ body.modal-open {
   }
 
   .project-year-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-photo-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2636,6 +2713,12 @@ body.modal-open {
   .home-offer,
   .home-testimonials {
     padding: 58px 0;
+  }
+
+  .video-panel,
+  .video-panel-media,
+  .somos-about-visual video {
+    min-height: 320px;
   }
 
   .client-logos {
